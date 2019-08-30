@@ -46,7 +46,7 @@ public class BatchConfig {
     public StepBuilderFactory stepBuilderFactory;
 
     @Autowired
-    @Qualifier("dataSource1")
+    @Qualifier("dataSource")
     private DataSource dataSource;
 
     @Autowired
@@ -60,10 +60,7 @@ public class BatchConfig {
     StudentTasklet taskletStep;
 
 
-
-
-
-    @Bean(destroyMethod="")
+   @Bean(destroyMethod="")
     public ItemReader<StudentDto> itemReader() throws Exception {
 
       /*  JdbcCursorItemReader<StudentDto> dbReader = new JdbcCursorItemReader<>();
